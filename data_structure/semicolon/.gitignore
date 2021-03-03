@@ -1,0 +1,6 @@
+**/Debug/
+.Release/
+semicolon/semicolon/[Dd]ebug/
+semicolon/semicolom/[Rr]elease/
+.vs/semicolon/v16
+ipch/

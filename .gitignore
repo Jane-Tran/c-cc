@@ -31,3 +31,7 @@
 *.out
 *.app
 AI-ML-DL/opencv/*
+
+**/Debug
+Debug/
+!data_structure/semicolon/Debug/*
