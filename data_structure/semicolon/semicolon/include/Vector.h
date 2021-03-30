@@ -20,6 +20,15 @@ public:
 		m_Size++;
 	}
 
+    void PushBack(T&& value)
+	{
+		if (m_Size >= m_Capacity)
+			ReAlloc(m_Capacity + m_Capacity / 2);
+
+		m_Data[m_Size] = std::move(value);
+		m_Size++;
+	}
+
 	const T& operator[](size_t index) const
 	{
 		if (index >= m_Size)
@@ -55,7 +64,7 @@ private:
 			m_Size = newCapacity;
 		
 		for (size_t i = 0; i < m_Size; i++)
-			newBlock[i] = m_Data[i];
+			newBlock[i] = std::move(m_Data[i]);
 
 		delete[] m_Data;
 		m_Data = newBlock;
